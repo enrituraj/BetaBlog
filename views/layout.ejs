@@ -19,8 +19,8 @@
                 <li><a href="/latest_news" class="menu_link <%= activePage === 'latest_news' ? 'active' : '' %>">Latest News</a></li>
                 <li><a href="/all_blog" class="menu_link <%= activePage === 'all_blog' ? 'active' : '' %>">All Blog</a></li>
                 <li><a href="/contact" class="menu_link <%= activePage === 'contact' ? 'active' : '' %>">Contact us</a></li>
-                <li><a href="/login" class="menu_link sm-show">login</a></li>
-                <li><a href="/register" class="menu_link sm-show">Sign up</a></li>
+                <li><a href="/login" class="menu_link sm-show  <%= activePage === 'login' ? 'active' : '' %>">login</a></li>
+                <li><a href="/register" class="menu_link sm-show  <%= activePage === 'register' ? 'active' : '' %>">Sign up</a></li>
             </ul>
             <ul class="main_menu flex">
                 <li><a href="/login" class="menu_link btn">login</a></li>

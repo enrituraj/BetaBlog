@@ -28,10 +28,10 @@ app.get('/contact', (req, res) => {
     res.render('contact', { activePage: 'contact' })
 })
 app.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login', { activePage: 'login' })
 })
 app.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', { activePage: 'register' })
 })
 
 app.listen(port, () => {
