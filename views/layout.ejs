@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Blog</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="main_navbar flex container">
+            <div class="main_navbar_logo">
+                <a href="">Beta<span>Blog</span></a>
+            </div>
+
+            <ul class="main_menu flex" id="main_menu">
+                <li><a href="/" class="menu_link <%= activePage === 'home' ? 'active' : '' %>">Home</a></li>
+                <li><a href="/latest_news" class="menu_link <%= activePage === 'latest_news' ? 'active' : '' %>">Latest News</a></li>
+                <li><a href="/all_blog" class="menu_link <%= activePage === 'all_blog' ? 'active' : '' %>">All Blog</a></li>
+                <li><a href="/contact" class="menu_link <%= activePage === 'contact' ? 'active' : '' %>">Contact us</a></li>
+                <li><a href="/login" class="menu_link sm-show">login</a></li>
+                <li><a href="/register" class="menu_link sm-show">Sign up</a></li>
+            </ul>
+            <ul class="main_menu flex">
+                <li><a href="/login" class="menu_link btn">login</a></li>
+                <li><a href="/register" class="menu_link btn">Sign up</a></li>
+            </ul>
+            <a onclick="showMenu()" class="toogel_btn"><i class='bx bx-menu'></i></a>
+        </nav>
+    </header>
+    
+  <%- body %>
+
+    <footer class="footer ">
+        <div class="container flex item-between-center">
+            <div>
+                &copy; all right reserve
+            </div>
+            <div>
+                <p>Made by <span>❤</span> Ritu Raj</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function showMenu(){
+            const main_menu = document.getElementById('main_menu');
+            main_menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
