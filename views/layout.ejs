@@ -13,18 +13,37 @@
             <div class="main_navbar_logo">
                 <a href="">Beta<span>Blog</span></a>
             </div>
-
             <ul class="main_menu flex" id="main_menu">
-                <li><a href="/" class="menu_link <%= activePage === 'home' ? 'active' : '' %>">Home</a></li>
-                <li><a href="/latest_news" class="menu_link <%= activePage === 'latest_news' ? 'active' : '' %>">Latest News</a></li>
-                <li><a href="/all_blog" class="menu_link <%= activePage === 'all_blog' ? 'active' : '' %>">All Blog</a></li>
-                <li><a href="/contact" class="menu_link <%= activePage === 'contact' ? 'active' : '' %>">Contact us</a></li>
-                <li><a href="/login" class="menu_link sm-show  <%= activePage === 'login' ? 'active' : '' %>">login</a></li>
-                <li><a href="/register" class="menu_link sm-show  <%= activePage === 'register' ? 'active' : '' %>">Sign up</a></li>
+                <% if (typeof user != 'undefined' ) { %>                 
+                    <li><a href="/" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'home' ? 'active' : '') : '' %>">Dashboard</a></li>
+                    <li><a href="/latest_news" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'latest_news' ? 'active' : '') : '' %>">My Profile</a></li>
+                    <li><a href="/all_blog" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'all_blog' ? 'active' : '') : '' %>">All Blog</a></li>
+                    <li><a href="/contact" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'contact' ? 'active' : '') : '' %>">My Blog</a></li>
+                    <li><a href="/users/login" class="menu_link  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Logout</a></li>
+                    <li><a href="/users/login" class="menu_link sm-show  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Logout</a></li>
+                
+                    <% }else{ %>
+
+
+                <li><a href="/" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'home' ? 'active' : '') : '' %>">Home</a></li>
+                <li><a href="/latest_news" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'latest_news' ? 'active' : '') : '' %>">Latest News</a></li>
+                <li><a href="/all_blog" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'all_blog' ? 'active' : '') : '' %>">All Blog</a></li>
+                <li><a href="/contact" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'contact' ? 'active' : '') : '' %>">Contact us</a></li>
+                <li><a href="/users/login" class="menu_link sm-show  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Login</a></li>
+                <li><a href="/users/register" class="menu_link sm-show <%=typeof activePage != 'undefined' ? (activePage === 'register' ? 'active' : '') : '' %>">Sign up</a></li>
+            
+                <% } %>
             </ul>
             <ul class="main_menu flex">
-                <li><a href="/login" class="menu_link btn">login</a></li>
-                <li><a href="/register" class="menu_link btn">Sign up</a></li>
+                <% if (typeof user != 'undefined' ) { %>                 
+                <form action="/users/logout?_method=DELETE" method="post">
+                    <button type="submit" class="logout">Logout</button>
+                </form>
+                <% }else{ %>
+                <li><a href="/users/login" class="menu_link btn">Login</a></li>
+                <li><a href="/users/register" class="menu_link btn">Sign up</a></li>
+                <% } %>
+
             </ul>
             <a onclick="showMenu()" class="toogel_btn"><i class='bx bx-menu'></i></a>
         </nav>

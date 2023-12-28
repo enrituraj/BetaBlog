@@ -2,7 +2,9 @@
     <section class="form">
         <div class="form-box">
             <h2 class="form_title">Sign in</h2>
-            <form action="" method="post">
+            
+            <%- include('partials/messages') %>
+            <form action="/users/login" method="post">
                 <div class="form_group">
                     <label for="Email">Email Address</label>
                     <input type="email" class="input_box" name="email" id="Email" placeholder="Enter Email Address">

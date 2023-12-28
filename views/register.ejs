@@ -2,18 +2,20 @@
     <section class="form">
         <div class="form-box">
             <h2 class="form_title">Register Now</h2>
-            <form action="" method="post">
+            <%- include('partials/messages') %>
+
+            <form action="/users/register" method="post">
                 <div class="form_group">
                     <label for="fullname">Full Name</label>
-                    <input type="text" class="input_box" name="fullname" id="fullname" placeholder="Enter Full Name">
+                    <input type="text" value="<%= typeof name != 'undefined' ? name : '' %>" class="input_box" name="name" id="fullname" placeholder="Enter Full Name">
                 </div>
                 <div class="form_group">
                     <label for="Email">Email Address</label>
-                    <input type="email" class="input_box" name="email" id="Email" placeholder="Enter Email Address">
+                    <input type="email" value="<%= typeof email != 'undefined' ? email : '' %>" class="input_box" name="email" id="Email" placeholder="Enter Email Address">
                 </div>
                 <div class="form_group">
                     <label for="password">Password</label>
-                    <input type="password" class="input_box" name="password" id="password" placeholder="Enter Password">
+                    <input type="password" value="<%= typeof password != 'undefined' ? password : '' %>" class="input_box" name="password" id="password" placeholder="Enter Password">
                 </div>
                 <div class="form_group">
                     <label for="remember_me" class="checkbox">
