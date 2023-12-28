@@ -1,4 +1,37 @@
+<!-- <% blogs.forEach(blog => { %>
+    <li>
+      <h2><%= blog.title %></h2>
+      <p><%- blog.content %></p>
+    </li>
+  <% }); %>-->
+<section class="container">
+    <div class="section_title">
+        <h2>All blog</h2>
+    </div>
+    <div class="flex all_blog">
+        <% blogs.forEach(blog => { %>
+        <div class="blog_card">
+            <div class="blog_img">
+                <img src="./img/img.webp" alt="">
+            </div>
+            <div class="blog_content">
+                <a href="/blogs/<%= blog._id %>">
 
+                    <p class="blog_author"><%= blog.author %> • <%= blog.createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
+                    <h1 class="blog_title"><%= blog.title %></h1>
+                    <p class="blog_text">Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</p>
+                    <div class="tags">
+                        <span>Leadership</span>
+                        <span>Leadership</span>
+                        <span>Frameworks</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</section>
+<!-- 
     <section class="container">
     <div class="section_title">
         <h2>All blog</h2>
@@ -209,4 +242,4 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
