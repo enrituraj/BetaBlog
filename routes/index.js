@@ -68,6 +68,27 @@ router.get('/all_blog',ensureAuthenticated, async(req, res) =>{
   res.render('all_blog.ejs', { blogs: blogs  , user: req.user});
 });
 
+// all_blog
+
+router.get('/latest_news', ensureAuthenticated, async (req, res) => {
+  try {
+    // const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.NEWS_API_KEY}`);
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.NEWS_API_KEY}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    res.render('latest_news.ejs', { data: data, user: req.user });
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
 // Profile
 router.get('/profile',ensureAuthenticated, (req, res) =>

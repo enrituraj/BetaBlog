@@ -1,0 +1,48 @@
+File Structure : 
+
+BetaBlog:.
+|   .env
+|   .gitignore
+|   app.js
+|   LICENSE
+|   package-lock.json
+|   package.json
+|   README.md
+|   test.txt
+|   
++---models
+|       Blog.js
+|       conn.js
+|       User.js
+|       
++---node_modules
+|   |   .package-lock.json
+|   |   -- all dependency file
++---public
+|   +---css
+|   |       style.css
+|   |       
+|   \---img
+|           img.webp
+|           
++---routes
+|       auth.js
+|       index.js
+|       passport.js
+|       users.js
+|       
+\---views
+    |   all_blog.ejs
+    |   blog.ejs
+    |   contact.ejs
+    |   create_blog.ejs
+    |   dashboard.ejs
+    |   index.ejs
+    |   latest_news.ejs
+    |   layout.ejs
+    |   login.ejs
+    |   register.ejs
+    |   
+    \---partials
+            messages.ejs
+            
