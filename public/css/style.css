@@ -329,7 +329,7 @@ section .section_title {
 .form .form-box .form_group .checkbox a {
   color: var(--primary-dark-clr);
 }
-.form .form-box .form_group button {
+.form .form-box .form_group .btn_submit {
   padding: 1rem 2rem;
   border: none;
   outline: none;
@@ -341,8 +341,8 @@ section .section_title {
   border-radius: 4px;
   transition: all 0.5s linear;
 }
-.form .form-box .form_group button:hover,
-.form .form-box .form_group button:active {
+.form .form-box .form_group .btn_submit:hover,
+.form .form-box .form_group .btn_submit:active {
   background-color: var(--primary-extra-dark-clr);
 }
 .form .form-box .form_msg {

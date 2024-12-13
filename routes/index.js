@@ -41,7 +41,8 @@ router.post('/create_blog', ensureAuthenticated,async (req, res) => {
 
     const saved = await savedBlog.save();
 
-    res.json({ success: true, blogId: saved._id });
+    // res.json({ success: true, blogId: saved._id });
+    res.redirect('/all_blog')
 
   } catch (error) {
     console.error(error);
@@ -64,7 +65,7 @@ router.get('/blogs/:id',ensureAuthenticated, async (req, res) => {
 
 // all_blog
 router.get('/all_blog',ensureAuthenticated, async(req, res) =>{
-  const blogs = await Blog.find({});
+  const blogs = await Blog.find({}).sort({ createdAt: -1 });
   res.render('all_blog.ejs', { blogs: blogs  , user: req.user});
 });
 
