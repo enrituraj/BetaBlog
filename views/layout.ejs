@@ -16,12 +16,11 @@
             <ul class="main_menu flex" id="main_menu">
                 <% if (typeof user != 'undefined' ) { %>                 
                     <li><a href="/" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'home' ? 'active' : '') : '' %>">Dashboard</a></li>
-                    <li><a href="/latest_news" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'latest_news' ? 'active' : '') : '' %>">My Profile</a></li>
+                    <li><a href="/latest_news" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'latest_news' ? 'active' : '') : '' %>">Latest News</a></li>
                     <li><a href="/all_blog" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'all_blog' ? 'active' : '') : '' %>">All Blog</a></li>
-                    <li><a href="/contact" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'contact' ? 'active' : '') : '' %>">My Blog</a></li>
-                    <li><a href="/users/login" class="menu_link  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Logout</a></li>
-                    <li><a href="/users/login" class="menu_link sm-show  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Logout</a></li>
-                
+                    <li><a href="/create_blog" class="menu_link <%=typeof activePage != 'undefined' ? (activePage === 'create_blog' ? 'active' : '') : '' %>">Create Blog</a></li>
+                    <li><a href="/users/login" class="menu_link lg-hidden  <%=typeof activePage != 'undefined' ? (activePage === 'login' ? 'active' : '') : '' %>">Logout</a></li>
+                    
                     <% }else{ %>
 
 
@@ -54,7 +53,7 @@
     <footer class="footer ">
         <div class="container flex item-between-center">
             <div>
-                &copy; all right reserve
+                &copy; All right reserve
             </div>
             <div>
                 <p>Made by <span>❤</span> Ritu Raj</p>
